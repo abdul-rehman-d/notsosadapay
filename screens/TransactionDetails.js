@@ -13,7 +13,10 @@ const TransactionDetails = ({ route, navigation }) => {
   }
   return (
     <View className='flex-1 bg-[#F2F6F7]'>
-      <SafeAreaView className={`h-1/2 rounded-b-3xl justify-between p-4 bg-${color}`}>
+      <SafeAreaView
+        style={{ backgroundColor: colors[color] }}
+        className={'h-1/2 rounded-b-3xl justify-between p-4'}
+      >
         <View className='flex-row items-center justify-between relative'>
           <View className='absolute top-0 left-0 z-10'>
             <ArrowIcon direction='left' color={colors.foreground} size={24} onPress={() => {
@@ -28,7 +31,7 @@ const TransactionDetails = ({ route, navigation }) => {
           <View className='bg-foreground rounded-3xl mb-4'>
             <ArrowIcon size={100} color={colors[color]} direction={transaction.nature === 'credit' ? 'down-left' : 'up-right'} />
           </View>
-          <Text className='mt-5 text-foreground text-4xl font-bold mb-3'>{getSymbol(transaction.nature)} Rs. {transaction.amount}</Text>
+          <Text className='mt-5 text-foreground text-4xl font-bold mb-3'>{getSymbol(transaction.nature)}Rs. {transaction.amount}</Text>
           <Text className='text-foreground font-light'>From <Text className='font-normal'>{transaction.from.name}</Text></Text>
           <Text className='text-foreground font-light'>To <Text className='font-normal'>{transaction.to.name}</Text></Text>
           <Text className='text-foreground font-light my-3'>{getFullDate(transaction.time)}</Text>

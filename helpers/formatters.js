@@ -45,9 +45,9 @@ const getHumanReadableTime = (time) => {
 const getSymbol = (nature) => {
     switch (nature) {
       case 'credit':
-        return '+'
+        return '+ '
       case 'debit':
-        return '-'
+        return ''
       case 'nuetral':
         return ''
       default:
