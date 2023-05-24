@@ -47,7 +47,7 @@ const PinScreen = ({ navigation }) => {
         <View className='flex-row gap-x-4 items-center h-5'>
           {
             createDummyArray(MAX_PIN_LENGTH).map((index) => (
-              <Text className={`w-5 ${!pin.charAt(index) ? "h-1 bg-slate-200 rounded-sm" : 'h-5 bg-white rounded-full'}`} />
+              <Text key={`input-box-${index}`} className={`w-5 ${!pin.charAt(index) ? "h-1 bg-slate-200 rounded-sm" : 'h-5 bg-white rounded-full'}`} />
             ))
           }
         </View>
