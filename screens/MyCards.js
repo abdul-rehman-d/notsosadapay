@@ -33,15 +33,15 @@ const MyCards = ({ navigation }) => {
 				</Text>
 			</View>
 
-			<View className='flex-row mt-5 rounded-3xl bg-gray-600 p-1'>
+			<View className='flex-row mt-5 rounded-3xl bg-gray-300 p-1'>
 				<Text
-					className={'w-1/2 p-4 bg-transparent text-center text-gray-800 rounded-3xl' + (tabSelected === 'virtual' && ' bg-white')}
+					className={'w-1/2 p-2 bg-transparent text-center text-gray-600 rounded-3xl font-bold' + (tabSelected === 'virtual' && ' bg-white text-gray-800')}
 					onPress={() => {
 						if (tabSelected !== 'virtual') setTabSelected('virtual')
 					}}
 				>Virtual</Text>
 				<Text
-					className={'w-1/2 p-4 bg-transparent text-center text-gray-800 rounded-3xl' + (tabSelected === 'physical' && ' bg-white')}
+					className={'w-1/2 p-2 bg-transparent text-center text-gray-600 rounded-3xl font-bold' + (tabSelected === 'physical' && ' bg-white text-gray-800')}
 					onPress={() => {
 						if (tabSelected !== 'physical') setTabSelected('physical')
 					}}
