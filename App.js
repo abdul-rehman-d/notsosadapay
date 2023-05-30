@@ -6,6 +6,7 @@ import PinScreen from './screens/PinScreen';
 import HomeTabs from './screens/HomeTabs';
 import TransactionDetails from './screens/TransactionDetails';
 import LoadMoney from './screens/LoadMoney';
+import MyCards from './screens/MyCards';
 
 const Stack = createNativeStackNavigator()
 
@@ -27,6 +28,11 @@ const App = () => {
           <Stack.Screen
             name='TransactionDetails'
             component={TransactionDetails}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name='MyCards'
+            component={MyCards}
             options={{headerShown: false}}
           />
           <Stack.Screen

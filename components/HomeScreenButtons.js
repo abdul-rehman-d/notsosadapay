@@ -9,7 +9,7 @@ const HomeScreenButtons = () => {
   return (
     <View className='flex-row px-4 h-72 w-full'>
         {/* left col */}
-        <TouchableOpacity className='mr-3 basis-7/12 rounded-2xl'>
+        <TouchableOpacity className='mr-3 basis-7/12 rounded-2xl' onPress={() => navigation.navigate('MyCards')}>
         <LinearGradient
             className='px-3 py-4 rounded-2xl h-full justify-between'
             colors={[colors.secondaryMedium, colors.secondary]}
