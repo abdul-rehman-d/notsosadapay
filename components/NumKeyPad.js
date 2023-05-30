@@ -8,9 +8,10 @@ const NumKeyPad = ({ push, pop }) => {
 		<View className='flex-row flex-wrap w-80 gap-x-0 justify-between'>
 			{ keys.map((key) => (
 				key === null ?
-					<Text className='w-24 h-24' />
+					<Text key={`numpad-key-${key}`} className='w-24 h-24' />
 				:
 					<TouchableOpacity
+						key={`numpad-key-${key}`}
 						className={`w-24 h-24 rounded-full
 						active:bg-transBlack
 						items-center justify-center`}
