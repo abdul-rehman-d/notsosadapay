@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { SignInContextProvider } from './context/SignInContext'
-import PinScreen from './screens/PinScreen';
-import HomeTabs from './screens/HomeTabs';
-import TransactionDetails from './screens/TransactionDetails';
-import LoadMoney from './screens/LoadMoney';
-import MyCards from './screens/MyCards';
-import SendMoney from './screens/SendMoney';
+import { SignInContextProvider } from './src/context/SignInContext'
+import PinScreen from './src/screens/PinScreen';
+import HomeTabs from './src/screens/HomeTabs';
+import TransactionDetails from './src/screens/TransactionDetails';
+import LoadMoney from './src/screens/LoadMoney';
+import MyCards from './src/screens/MyCards';
+import SendMoney from './src/screens/SendMoney';
 
 const Stack = createNativeStackNavigator()
 
