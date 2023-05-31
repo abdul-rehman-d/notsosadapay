@@ -4,10 +4,10 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import ArrowIcon from '../components/ArrowIcon'
 import colors from '../colors'
 
-function Button ({ onPress, children }) {
+function Button ({ onPress, children, color }) {
 	return (
 		<TouchableOpacity
-			className='bg-gray-500 py-3 rounded-3xl w-[48%] items-center'
+			className={color + 'py-3 rounded-3xl w-[48%] items-center'}
 			onPress={onPress}
 		>
 			<Text className='text-white font-bold text-lg'>
@@ -17,13 +17,16 @@ function Button ({ onPress, children }) {
 	)
 }
 
-function CardNumber ({ cardNo, view }) {
+function CardNumber ({ cardNo, view, textColor }) {
 	return (
 		<View className='flex-col mb-16'>
 			{
 				cardNo.split(' ').map((item, index) => {
 					return (
-						<Text className='text-2xl font-bold text-gray-400 tracking-widest' key={`card-number-row-${index}`}>{
+						<Text
+							className={textColor + 'text-2xl font-bold tracking-widest'}
+							key={`card-number-row-${index}`
+						}>{
 							(index === 3 || view)
 							? item
 							: '• • • •'
@@ -38,32 +41,37 @@ function CardNumber ({ cardNo, view }) {
 function Card ({ type, cardNo, expDate, cvc }) {
 	const [ view, setView ] = useState(false)
 
+	const textColor = type === 'virtual' ? 'text-gray-400 ' : 'text-foreground '
+	const bgColor = type === 'virtual' ? 'bg-[#F2F6F7] ' : 'bg-secondary '
+	const buttonColor = type === 'virtual' ? 'bg-gray-500 ' : 'bg-secondaryDark '
+	const icon = type === 'virtual' ? require('../assets/icon.png') : require('../assets/icon_mono.png')
+
 	return (
-		<View className='rounded-2xl bg-[#F2F6F7] p-6 shadow-black shadow-md w-64'>
+		<View className={bgColor + 'rounded-2xl p-6 shadow-black shadow-md w-64'}>
 			<View className='flex-row justify-between'>
 				<View className='items-center'>
 					<Image
-						source={require('../assets/icon.png')}
+						source={icon}
 						className='w-10 h-10 aspect-square mb-2'
 						resizeMode='contain'
 					/>
 					{
 						type === 'virtual' &&
-						<Text className='font-light text-gray-500'>Virtual</Text>
+						<Text className={textColor + 'font-light'}>Virtual</Text>
 					}
 				</View>
 				<View className='items-end'>
-					<CardNumber cardNo={cardNo} view={view} />
+					<CardNumber cardNo={cardNo} view={view} textColor={textColor} />
 					<View className='mb-16 flex-row'>
 						<View className='mr-2 items-end'>
-							<Text className='text-lg text-gray-400'>Exp Date</Text>
-							<Text className='text-lg text-gray-400'>CVC</Text>
+							<Text className={textColor + 'text-lg'}>Exp Date</Text>
+							<Text className={textColor + 'text-lg'}>CVC</Text>
 						</View>
 						<View className='items-end w-12'>
-							<Text className={'text-gray-400 ' + (view ? 'text-lg' : 'text-xl')}>
+							<Text className={textColor + (view ? 'text-lg' : 'text-xl')}>
 								{view ? expDate : '• • / • •'}
 							</Text>
-							<Text className={'text-gray-400 ' + (view ? 'text-lg' : 'text-xl')}>
+							<Text className={textColor + (view ? 'text-lg' : 'text-xl')}>
 								{view ? cvc : '• • •'}
 							</Text>
 						</View>
@@ -71,10 +79,16 @@ function Card ({ type, cardNo, expDate, cvc }) {
 				</View>
 			</View>
 			<View className='flex-row justify-between'>
-				<Button onPress={() => setView(curr => !curr)}>
+				<Button
+					onPress={() => setView(curr => !curr)}
+					color={buttonColor}
+					>
 					{view ? 'Hide' : 'View'}
 				</Button>
-				<Button onPress={() => {}}>Copy</Button>
+				<Button
+					onPress={() => {}}
+					color={buttonColor}
+				>Copy</Button>
 			</View>
 		</View>
 	)
@@ -90,7 +104,7 @@ const MyCards = ({ navigation }) => {
 			cvc: '990'
 		},
 		physical: {
-			cardNo: '1234 5678 1234 2811',
+			cardNo: '1234 5678 1234 2812',
 			expDate: '30 / 23',
 			cvc: '990'
 		}
@@ -104,7 +118,7 @@ const MyCards = ({ navigation }) => {
 						navigation.goBack()
 					}} />
 				</View>
-				<Text className='text-black text-lg text-center w-full'>
+				<Text className='text-black text-lg text-center w-full font-bold'>
 					My Cards
 				</Text>
 			</View>
