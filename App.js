@@ -7,6 +7,7 @@ import HomeTabs from './screens/HomeTabs';
 import TransactionDetails from './screens/TransactionDetails';
 import LoadMoney from './screens/LoadMoney';
 import MyCards from './screens/MyCards';
+import SendMoney from './screens/SendMoney';
 
 const Stack = createNativeStackNavigator()
 
@@ -36,8 +37,13 @@ const App = () => {
             options={{headerShown: false}}
           />
           <Stack.Screen
-            name='LoadMoneyScreen'
+            name='LoadMoney'
             component={LoadMoney}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name='SendMoney'
+            component={SendMoney}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

@@ -33,7 +33,7 @@ const HomeScreenButtons = () => {
         {/* right col */}
         <View className='flex-1 justify-between'>
         {/* load button */}
-        <TouchableOpacity className='rounded-2xl relative' style={{flexBasis: '48%'}} onPress={() => navigation.navigate('LoadMoneyScreen')}>
+        <TouchableOpacity className='rounded-2xl relative' style={{flexBasis: '48%'}} onPress={() => navigation.navigate('LoadMoney')}>
             <LinearGradient
             className='p-3 rounded-2xl h-full justify-between'
             colors={[colors.accentMedium, colors.accent]}
@@ -43,7 +43,7 @@ const HomeScreenButtons = () => {
             </LinearGradient>
         </TouchableOpacity>
         {/* send button */}
-        <TouchableOpacity className='rounded-2xl relative' style={{flexBasis: '48%'}}>
+        <TouchableOpacity className='rounded-2xl relative' style={{flexBasis: '48%'}} onPress={() => navigation.navigate('SendMoney')}>
             <LinearGradient
             className='p-3 rounded-2xl h-full justify-between'
             colors={[colors.primaryMedium, colors.primary]}

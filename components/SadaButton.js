@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Text, TouchableOpacity } from 'react-native'
 
-const SadaButton = ({ text, Icon, disabled }) => {
+const SadaButton = ({ text, Icon, disabled, absolute=true, onPress }) => {
 	return (
-		<TouchableOpacity className={`${disabled ? 'bg-transBlack' : 'bg-black'} rounded-xl px-8 py-4
+		<TouchableOpacity className={`${disabled ? 'bg-transBlack' : 'bg-black shadow-md'} rounded-xl px-8 py-4
 			flex-row justify-between items-center
-			absolute bottom-10 left-4 right-4`}
+			${absolute ? 'absolute bottom-10 left-4 right-4' : 'w-full'}`}
+			onPress={() => {
+				if (!disabled && typeof onPress === "function") onPress()
+			}}
+			disabled={disabled}
 		>
 			<Text className='text-lg text-foreground font-bold p-0 m-0'>{text}</Text>
 			<Icon />
