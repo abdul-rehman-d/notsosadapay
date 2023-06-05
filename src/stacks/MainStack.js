@@ -4,7 +4,7 @@ import HomeTabs from '../screens/HomeTabs';
 import TransactionDetails from '../screens/TransactionDetails';
 import LoadMoney from '../screens/LoadMoney';
 import MyCards from '../screens/MyCards';
-import SendMoneyStack from '../stacks/SendMoney';
+import SendMoneyStack from './SendMoneyStack';
 
 const Stack = createNativeStackNavigator()
 

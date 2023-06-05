@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import EnterAmount from '../screens/SendMoney/EnterAmount';
+import SelectAccount from '../screens/SendMoney/SelectAccount';
 
 const Stack = createNativeStackNavigator()
 
@@ -13,7 +14,7 @@ const SendMoneyStack = () => {
 			/>
 			<Stack.Screen
 				name='SelectAccount'
-				component={EnterAmount}
+				component={SelectAccount}
 				options={{headerShown: false}}
 			/>
 			<Stack.Screen
