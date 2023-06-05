@@ -43,7 +43,7 @@ const HomeScreenButtons = () => {
             </LinearGradient>
         </TouchableOpacity>
         {/* send button */}
-        <TouchableOpacity className='rounded-2xl relative' style={{flexBasis: '48%'}} onPress={() => navigation.navigate('SendMoney')}>
+        <TouchableOpacity className='rounded-2xl relative' style={{flexBasis: '48%'}} onPress={() => navigation.navigate('SendMoney', { screen: 'EnterAmount' })}>
             <LinearGradient
             className='p-3 rounded-2xl h-full justify-between'
             colors={[colors.primaryMedium, colors.primary]}

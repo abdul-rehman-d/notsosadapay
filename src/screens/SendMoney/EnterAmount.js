@@ -1,12 +1,12 @@
-import { View, Text, Image } from 'react-native'
-import React, { useState, useEffect, useCallback } from 'react'
+import { View, Text } from 'react-native'
+import React, { useState, useCallback } from 'react'
 // custom
-import NumKeyPad from '../components/NumKeyPad'
-import ArrowIcon from '../components/ArrowIcon'
-import colors from '../colors'
-import SadaButton from '../components/SadaButton'
+import NumKeyPad from '../../components/NumKeyPad'
+import ArrowIcon from '../../components/ArrowIcon'
+import colors from '../../colors'
+import SadaButton from '../../components/SadaButton'
 
-const SendMoney = ({ navigation }) => {
+const EnterAmount = ({ navigation }) => {
   const [ amount, setAmount ] = useState(0)
   const [ showError, setShowError ] = useState(false)
 
@@ -72,4 +72,4 @@ const SendMoney = ({ navigation }) => {
   )
 }
 
-export default SendMoney
+export default EnterAmount
