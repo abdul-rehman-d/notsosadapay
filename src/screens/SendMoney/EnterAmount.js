@@ -66,6 +66,7 @@ const EnterAmount = ({ navigation }) => {
         disabled={amount === 0}
         absolute={false}
         onPress={() => {
+          navigation.navigate('SendMoney', { screen: 'SelectAccount' })
         }}
       />
     </View>
