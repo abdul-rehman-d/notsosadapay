@@ -24,10 +24,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.abdulrehmand.notsosadapay"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9c1d00b7-645a-4fee-a6ab-1bf3531cbebe"
+      }
     }
   }
 }

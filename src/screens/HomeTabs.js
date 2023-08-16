@@ -14,16 +14,18 @@ const Tab = createBottomTabNavigator()
 const HomeTabs = ({ navigation }) => {
   
   // Remove the pin route from the stack
-  navigation.dispatch(state => {
-    const routes = state.routes.filter(r => r.name !== 'Pin');
-    return CommonActions.reset({
-      ...state,
-      routes,
-      index: routes.length - 1,
-    });
-  });
+  // navigation.dispatch(state => {
+  //   const routes = state.routes.filter(r => r.name !== 'Pin');
+  //   return CommonActions.reset({
+  //     ...state,
+  //     routes,
+  //     index: routes.length - 1,
+  //   });
+  // });
 
-  const bottomSheetRef = useRef()
+  // const bottomSheetRef = useRef()
+
+  return (<HomeScreen />)
 
   return (
     <>
@@ -74,10 +76,6 @@ const HomeTabs = ({ navigation }) => {
           }}
         />
       </Tab.Navigator>
-      {/* <BottomSheet
-        snapPoints={['25%', '50%']}
-        ref={bottomSheetRef}
-      /> */}
   </>
   )
 }

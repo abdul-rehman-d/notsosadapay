@@ -32,7 +32,8 @@ const accounts = [
   },
 ]
 
-const SelectAccount = ({ navigation }) => {
+const SelectAccount = ({ route, navigation }) => {
+  console.log('route', route)
   return (
     <SafeAreaView className='flex-1 p-4'>
       <View>
@@ -66,9 +67,8 @@ const SelectAccount = ({ navigation }) => {
           <View key={`account-${idx}`} className='flex-col gap-x-4 p'>
             <View className='rounded-full h-12 w-12 justify-center items-center border border-slate-500'>
               <Image
-                source={require('../../assets/logo.png')}
+                source={require('../../assets/icon.png')}
                 className='w-10 h-10'
-                resizeMode='contain'
               />
             </View>
             <View className="flex-grow">
